@@ -33,7 +33,7 @@ public class CapacityProducer {
 
         KafkaProducer<String, Capacity> producer = new KafkaProducer<>(props);
         long ts = 0;
-        File file = new File(PeopleProducer.class.getClassLoader().getResource("capacities.csv").getPath());
+        File file = new File(PeopleProducer.class.getClassLoader().getResource("capacities.csv").getPath().replace("%20", " "));
         FileReader f = new FileReader(file);
         CSVReader reader = new CSVReader(f);
 
